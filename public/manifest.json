@@ -1,0 +1,12 @@
+{
+  "name": "Bookmark",
+  "short_name": "Bookmark",
+  "description":"Bookmark website",
+  "theme_color": "#ffffff",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "splash_pages": null
+}
