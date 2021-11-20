@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "./header";
 import Content from "./Content";
-import Features from "./features";
+import Features from "./Features";
 import Downloads from "./Downloads";
 import Faq from "./Faq";
 
