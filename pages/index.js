@@ -4,6 +4,7 @@ import Content from "./Content";
 import Features from "./Features";
 import Downloads from "./Downloads";
 import Faq from "./Faq";
+import Contactus from "./Contactus";
 
 export default function Home() {
   return (
@@ -37,6 +38,9 @@ export default function Home() {
 
       {/* FAQ */}
       <Faq />
+
+      {/* Contantus */}
+      <Contactus />
       
     </>
   );
