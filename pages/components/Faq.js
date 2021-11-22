@@ -15,24 +15,35 @@ const Faq = () => {
         </div>
         {/* FAQ items*/}
         <div className="flex flex-col sm:w-3/4 lg:w-6/12 mt-12 mx-auto">
-          <div className="flex items-center border-b py-4">
+
+          <div className="flex items-center border-b py-4 pl-1
+          text-black hover:text-white rounded-lg bg-gradient-to-r from-blue-100
+           hover:from-bookmark-purple "
+          >
             <span className="flex-1">What is the Bookmark?</span>
             <i className="fas fa-chevron-down cursor-pointer text-bookmark-purple"></i>
           </div>
-          <div className="flex items-center border-b py-4">
+          <div className="flex items-center border-b py-4 pl-1
+          text-black hover:text-white rounded-lg bg-gradient-to-r from-blue-100
+           hover:from-bookmark-purple">
             <span className="flex-1">How can I request a new browser?</span>
             <i className="fas fa-chevron-down cursor-pointer text-bookmark-purple"></i>
           </div>
-          <div className="flex items-center border-b py-4">
+          <div className="flex items-center border-b py-4 pl-1
+          text-black hover:text-white rounded-lg bg-gradient-to-r from-blue-100
+           hover:from-bookmark-purple">
             <span className="flex-1">Is there a mobile app?</span>
             <i className="fas fa-chevron-down cursor-pointer text-bookmark-purple"></i>
           </div>
-          <div className="flex items-center border-b py-4">
+          <div className="flex items-center border-b py-4 pl-1
+          text-black hover:text-white rounded-lg bg-gradient-to-r from-blue-100
+           hover:from-bookmark-purple">
             <span className="flex-1">What about other chromium browsers?</span>
             <i className="fas fa-chevron-down cursor-pointer text-bookmark-purple"></i>
           </div>
+
           <button className="self-center btn btn-purple hover:bg-bookmark-white hover:text-bookmark-purple mt-7">
-           More info
+            More info
           </button>
         </div>
       </div>

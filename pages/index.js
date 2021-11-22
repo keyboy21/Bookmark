@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Header from "./header";
-import Content from "./Content";
-import Features from "./Features";
-import Downloads from "./Downloads";
-import Faq from "./Faq";
-import Contactus from "./Contactus";
+import Header from "./components/Header";
+import Content from "./components/Content";
+import Features from "./components/Features";
+import Downloads from "./components/Downloads";
+import Faq from "./components/Faq";
+import Contactus from "./components/Contactus";
 
 export default function Home() {
   return (

@@ -5,19 +5,20 @@ const Content = () => {
     <section className="relative">
       <div className="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
         <div className="flex flex-1 flex-col items-center lg:items-start">
-          <h2 className="text-bookmark-blue text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
+          <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500  to-red-500 text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
             A Simple Bookmark Manager
           </h2>
-          <p className="text-bookmark-grey mb-6 text-lg text-center lg:text-left">
+          <p className="text-bookmark-grey mb-6 text-lg text-center lg:text-left whitespace-normal">
             A clean and simple interface to organize your favorite websites.Open
             a new browser tab and see load infinity. Try it fo free!
           </p>
+
           {/* Buttons */}
           <div className="flex justify-center flex-wrap gap-6">
-            <button className="btn btn-purple hover:bg-green-500 hover:text-bookmark-white">
+            <button className="btn btn-purple hover:bg-green-500 hover:text-bookmark-white transform hover:rotate-12">
               Get it on Chrome
             </button>
-            <button className="btn btn-white hover:bg-bookmark-red hover:text-bookmark-white">
+            <button className="btn btn-white hover:bg-bookmark-red hover:text-bookmark-white transform hover:rotate-12 ">
               Get it on Firefox
             </button>
           </div>
