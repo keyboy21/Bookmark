@@ -3,7 +3,7 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "/",
-    "start_url": "https://bookmark-eight.vercel.app/",
+    "start_url": "/",
     "name": "Bookmark extension",
     "short_name": "Bookmark",
     "description": "This is the Bookmark extension website",
