@@ -5,6 +5,7 @@ import Features from "./components/Features";
 import Downloads from "./components/Downloads";
 import Faq from "./components/Faq";
 import Contactus from "./components/Contactus";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -41,6 +42,9 @@ export default function Home() {
 
       {/* Contantus */}
       <Contactus />
+
+      {/* Footer */}
+      <Footer />
       
     </>
   );
