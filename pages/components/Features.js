@@ -35,7 +35,7 @@ const Features = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi,
               fugit?
             </p>
-            <button className="btn btn-purple hover:bg-bookmark-white hover:text-bookmark-purple">
+            <button className="btn nm-concave-bookmark-white hover:nm-inset-bookmark-white">
               More info
             </button>
           </div>
@@ -75,7 +75,7 @@ const Features = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi,
               fugit?
             </p>
-            <button className="btn btn-purple hover:bg-bookmark-white hover:text-bookmark-purple">
+            <button className="btn nm-concave-bookmark-white hover:nm-inset-bookmark-white">
               More info
             </button>
           </div>
@@ -117,7 +117,7 @@ const Features = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi,
               fugit?
             </p>
-            <button className="btn btn-purple hover:bg-bookmark-white hover:text-bookmark-purple">
+            <button className="btn nm-concave-bookmark-white hover:nm-inset-bookmark-white">
               More info
             </button>
           </div>

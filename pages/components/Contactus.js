@@ -10,12 +10,12 @@ const Contactus = () => {
             Stay up-to-date with what we&apos;re doing
           </h1>
           <div className="flex flex-col sm:flex-row gap-6  mt-8">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="outline-none flex-1 px-2 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent"
-              />
-            <button className="btn bg-bookmark-red hover:bg-bookmark-white hover:text-black">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="flex-1 px-2 py-3 rounded-md text-black nm-concave-bookmark-purple focus:outline-none focus:nm-inset-bookmark-purple focus:text-morp"
+            />
+            <button className="btn text-morp nm-concave-bookmark-purple hover:nm-inset-bookmark-purple">
               Contact Us
             </button>
           </div>

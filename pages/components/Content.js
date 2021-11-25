@@ -15,10 +15,10 @@ const Content = () => {
 
           {/* Buttons */}
           <div className="flex justify-center flex-wrap gap-6">
-            <button className="btn btn-purple hover:bg-green-500 hover:text-bookmark-white transform hover:rotate-12">
+            <button className="btn nm-convex-white hover:nm-inset-bookmark-white">
               Get it on Chrome
             </button>
-            <button className="btn btn-white hover:bg-bookmark-red hover:text-bookmark-white transform hover:rotate-12 ">
+            <button className="btn nm-convex-white hover:nm-inset-bookmark-white">
               Get it on Firefox
             </button>
           </div>

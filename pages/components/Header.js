@@ -15,6 +15,7 @@ const Header = () => {
           <li className="cursor-pointer">Features</li>
           <li className="cursor-pointer">Pricing</li>
           <li className="cursor-pointer">Contact</li>
+
           <button className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
             Login
           </button>

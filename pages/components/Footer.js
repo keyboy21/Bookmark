@@ -18,6 +18,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex gap-10 mt-12 md:mt-0">
+          
           <li className="list-none cursor-pointer">
             <i className="text-white text-2xl fab fa-twitter"></i>
           </li>

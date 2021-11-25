@@ -9,6 +9,7 @@ module.exports = {
         "bookmark-blue": "#242A45",
         "bookmark-grey": "#9194A2",
         "bookmark-white": "#f7f7f7",
+        "morp":"#EBECF0"
       },
       animation: {
         spin: "spin 3s linear infinite",
@@ -40,5 +41,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-neumorphism')],
 };
