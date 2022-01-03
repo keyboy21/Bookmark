@@ -1,5 +1,19 @@
 import Image from "next/image";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, Provider } from "../firebase/firebase";
+import { signInWithPopup, signOut } from "firebase/auth";
+
 const Header = () => {
+  const [user] = useAuthState(auth);
+  
+  const Signin = async () => {
+    await signInWithPopup(auth, Provider)
+  };
+
+  const logOut = () => {
+    signOut(auth);
+  };
+
   return (
     <header>
       <nav className="container flex items-center py-4 mt-4 sm:mt-12">
@@ -16,9 +30,30 @@ const Header = () => {
           <li className="cursor-pointer">Pricing</li>
           <li className="cursor-pointer">Contact</li>
 
-          <button className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
-            Login
-          </button>
+          {!user ? (
+            <button
+              onClick={Signin}
+              className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase"
+            >
+              Login
+            </button>
+          ) : (
+            <>
+              <Image
+                src={user.photoURL}
+                width={50}
+                height={50}
+                alt="User"
+                className="rounded-full"
+              />
+              <button
+                onClick={logOut}
+                className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase"
+              >
+                Logout
+              </button>
+            </>
+          )}
         </ul>
         <div className="flex sm:hidden flex-1 justify-end">
           <i className="text-2xl fas fa-bars"></i>
