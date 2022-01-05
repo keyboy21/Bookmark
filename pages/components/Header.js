@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, Provider } from "../firebase/firebase";
+import { auth, provider } from "../../firebase/firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 
 const Header = () => {
   const [user] = useAuthState(auth);
-  
+
   const Signin = async () => {
-    await signInWithPopup(auth, Provider)
+    await signInWithPopup(auth, provider);
   };
 
-  const logOut = () => {
-    signOut(auth);
+  const logOut = async () => {
+    await signOut(auth);
   };
 
   return (
