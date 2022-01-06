@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navigation } from "../nav-data";
+import { navigation } from "../../nav-data";
 import { Disclosure, Menu } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
 import { useAuthState } from "react-firebase-hooks/auth";
