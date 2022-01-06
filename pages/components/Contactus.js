@@ -1,6 +1,6 @@
 const Contactus = () => {
   return (
-    <section className="bg-bookmark-purple text-bookmark-white py-20">
+    <section className="bg-bookmark-purple text-bookmark-white py-20" id="contact">
       <div className="container">
         <div className="sm:w-3/4 lg:w-2/4 mx-auto">
           <p className="text-center font-light uppercase mb-8">

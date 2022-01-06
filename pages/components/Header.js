@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { navigation } from "../nav-data";
 import { Disclosure, Menu } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -6,12 +8,6 @@ import { auth, provider } from "../../firebase/firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 
 const Header = () => {
-  const navigation = [
-    { name: "Features", href: "#", current: true },
-    { name: "Pricing", href: "#", current: false },
-    { name: "Contact", href: "#", current: false },
-  ];
-
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
@@ -39,9 +35,11 @@ const Header = () => {
           </div>
 
           <ul className="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
-            <li className="cursor-pointer">Features</li>
-            <li className="cursor-pointer">Pricing</li>
-            <li className="cursor-pointer">Contact</li>
+            {navigation.map((item) => (
+              <li className="cursor-pointer" key={item.id}>
+                <Link href={item.href}>{item.name}</Link>
+              </li>
+            ))}
 
             {!user ? (
               <button
@@ -120,7 +118,7 @@ const Header = () => {
           <div className="px-2 pb-3 space-y-1">
             {navigation.map((item) => (
               <Disclosure.Button
-                key={item.name}
+                key={item.id}
                 as="a"
                 href={item.href}
                 className={classNames(

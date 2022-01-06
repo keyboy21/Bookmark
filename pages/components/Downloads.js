@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Downloads = () => {
   return (
-    <section className="py-20 mt-20">
+    <section className="py-20 mt-20" id="download">
       {/* Heading */}
       <div className="sm:w-3/4 lg:w-6/12 mx-auto px-2">
         <h2 className="text-3xl text-center text-bookmark-purple">

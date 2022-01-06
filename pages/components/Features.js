@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Features = () => {
   return (
-    <section className="bg-bookmark-white py-20 mt-20 lg:mt-60 ">
+    <section className="bg-bookmark-white py-20 mt-20 lg:mt-60" id="features">
       
       {/* Heading */}
       <div className="sm:w-3/4 lg:w-6/12 mx-auto px-2">
