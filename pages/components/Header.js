@@ -36,8 +36,8 @@ const Header = () => {
 
           <ul className="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
             {navigation.map((item) => (
-              <li className="cursor-pointer" key={item.id}>
-                <Link href={item.href}>{item.name}</Link>
+              <li className="cursor-pointer font-medium" key={item.id}>
+                <Link href={item.href} >{item.name}</Link>
               </li>
             ))}
 
@@ -70,7 +70,7 @@ const Header = () => {
           <div className="flex sm:hidden flex-1 justify-end">
             {/* Mobile menu button*/}
             <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span className="sr-only">Open main menu</span>
+
               <MenuIcon className="block h-6 w-6" aria-hidden="true" />
             </Disclosure.Button>
           </div>
@@ -124,7 +124,7 @@ const Header = () => {
                 className={classNames(
                   item.current
                     ? "bg-gray-900 text-white"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    : "text-gray-500 hover:bg-gray-700 hover:text-white",
                   "block px-3 py-2 rounded-md text-base font-medium"
                 )}
                 aria-current={item.current ? "page" : undefined}

@@ -1,6 +1,5 @@
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode:'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -26,7 +25,7 @@ module.exports = {
     },
 
     fontFamily: {
-      Poppins: ["Poppins", "sans-serif"],
+      Tillana: ["Tillana', cursive"],
     },
     container: {
       center: true,
@@ -37,9 +36,6 @@ module.exports = {
         "2xl": "1440px",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('tailwindcss-neumorphism')],
 };
