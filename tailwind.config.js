@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: ["./pages/**/*.{js}"],
   theme: {
     extend: {
       colors: {
@@ -25,7 +25,7 @@ module.exports = {
     },
 
     fontFamily: {
-      Tillana: ["Tillana', cursive"],
+      tillana: ["Tillana', cursive"],
     },
     container: {
       center: true,

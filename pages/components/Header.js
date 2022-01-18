@@ -36,7 +36,7 @@ const Header = () => {
 
           <ul className="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
             {navigation.map((item) => (
-              <li className="cursor-pointer font-medium" key={item.id}>
+              <li className="cursor-pointer" key={item.id}>
                 <Link href={item.href} >{item.name}</Link>
               </li>
             ))}
