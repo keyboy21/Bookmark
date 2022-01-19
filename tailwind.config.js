@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./pages/**/*.{js,jsx}"],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -8,10 +8,7 @@ module.exports = {
         "bookmark-blue": "#242A45",
         "bookmark-grey": "#9194A2",
         "bookmark-white": "#f7f7f7",
-        "morp":"#EBECF0",
-        green: colors.emerald,
-        yellow: colors.amber,
-        purple: colors.violet,
+        "morp":"#EBECF0"
       },
       animation: {
         spin: "spin 3s linear infinite",
@@ -28,7 +25,7 @@ module.exports = {
     },
 
     fontFamily: {
-      tillana: ["Tillana', cursive"],
+      Poppins: ["Poppins", "sans-serif"],
     },
     container: {
       center: true,
@@ -39,6 +36,9 @@ module.exports = {
         "2xl": "1440px",
       },
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [require('tailwindcss-neumorphism')],
 };
