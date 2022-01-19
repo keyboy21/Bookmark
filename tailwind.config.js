@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./pages/**/*.{js}"],
+  content: ["./pages/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
@@ -8,7 +8,10 @@ module.exports = {
         "bookmark-blue": "#242A45",
         "bookmark-grey": "#9194A2",
         "bookmark-white": "#f7f7f7",
-        "morp":"#EBECF0"
+        "morp":"#EBECF0",
+        green: colors.emerald,
+        yellow: colors.amber,
+        purple: colors.violet,
       },
       animation: {
         spin: "spin 3s linear infinite",
