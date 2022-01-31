@@ -8,14 +8,14 @@ import dynamic from "next/dynamic";
 // import Contactus from "./components/Contactus";
 // import Footer from "./components/Footer";
 
-const Loading = dynamic(() => import("./Loading"));
-const Header = dynamic(() => import("./components/Header"), {ssr: false, loading:Loading});
-const Features= dynamic(() => import("./components/Features"), {ssr: false,loading: Loading});
-const Content= dynamic(() => import("./components/Content"), {ssr: false,loading: Loading});
-const Faq= dynamic(() => import("./components/Faq"), {ssr: false,loading: Loading});
-const Downloads= dynamic(() => import("./components/Downloads"), {ssr: false,loading: Loading});
-const Contactus= dynamic(() => import("./components/Contactus"), {ssr: false,loading: Loading});
-const Footer= dynamic(() => import("./components/Footer"), {ssr: false,loading: Loading});
+// const Loading = dynamic(() => import("./Loading"));
+const Header = dynamic(() => import("./components/Header"), {ssr: false});
+const Features= dynamic(() => import("./components/Features"), {ssr: false});
+const Content= dynamic(() => import("./components/Content"), {ssr: false});
+const Faq= dynamic(() => import("./components/Faq"), {ssr: false});
+const Downloads= dynamic(() => import("./components/Downloads"), {ssr: false});
+const Contactus= dynamic(() => import("./components/Contactus"), {ssr: false});
+const Footer= dynamic(() => import("./components/Footer"), {ssr: false});
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         />
         <title>Bookmark</title>
       </Head>
-
+      
       {/* Header */}
       <Header />
 
