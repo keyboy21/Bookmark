@@ -1,5 +1,5 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Header from "./components/Header";
 import Content from "./components/Content";
 import Features from "./components/Features";
