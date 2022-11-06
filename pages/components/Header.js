@@ -1,37 +1,46 @@
-import Image from "next/image";
-import Link from "next/link";
-import { navigation } from "../../nav-data";
-import { Disclosure, Menu } from "@headlessui/react";
-import { MenuIcon } from "@heroicons/react/outline";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, provider } from "../../firebase/firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
+import Image from 'next/image'
+import Boormark from '../../public/imgs/logo-bookmark.svg'
+import Link from 'next/link'
+import { navigation } from '../../nav-data'
+import { Disclosure, Menu } from '@headlessui/react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth, provider } from '../../firebase/firebase'
+import { signInWithPopup, signOut } from 'firebase/auth'
 
 const Header = () => {
   function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
+    return classes.filter(Boolean).join(' ')
   }
-  const [user] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth)
 
   const Signin = async () => {
-    await signInWithPopup(auth, provider);
-  };
+    await signInWithPopup(auth, provider)
+  }
 
   const logOut = async () => {
-    await signOut(auth);
-  };
+    await signOut(auth)
+  }
 
+  if (loading) {
+    return (
+      <div>
+        <p>Initialising User...</p>
+      </div>
+    )
+  }
+  if (error) {
+    return (
+      <div>
+        <p>Error: {error}</p>
+      </div>
+    )
+  }
   return (
     <header>
       <Disclosure as="nav">
         <nav className="container flex items-center py-4 mt-4 sm:mt-12">
           <div className="py-1">
-            <Image
-              src="/imgs/logo-bookmark.svg"
-              alt="Bookmark"
-              width="148"
-              height="25"
-            />
+            <Image src={Boormark} alt="Bookmark" />
           </div>
 
           <ul className="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
@@ -42,25 +51,13 @@ const Header = () => {
             ))}
 
             {!user ? (
-              <button
-                onClick={Signin}
-                className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase"
-              >
+              <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                 Login
               </button>
             ) : (
               <>
-                <Image
-                  src={user.photoURL}
-                  width={50}
-                  height={50}
-                  alt="User"
-                  className="rounded-full"
-                />
-                <button
-                  onClick={logOut}
-                  className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase"
-                >
+                <Image src={user.photoURL} width={50} height={50} alt="User" className="rounded-full" />
+                <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                   Logout
                 </button>
               </>
@@ -68,45 +65,25 @@ const Header = () => {
           </ul>
 
           <div className="flex sm:hidden flex-1 justify-end">
-            {/* Mobile menu button*/}
             <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
-              <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="block w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
             </Disclosure.Button>
           </div>
 
           <Menu as="div" className="ml-3 sm:hidden relative">
             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
               {!user ? (
-                <button
-                  onClick={Signin}
-                  className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase"
-                >
+                <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                   Login
                 </button>
               ) : (
                 <>
-                  <Image
-                    src={user.photoURL}
-                    width={50}
-                    height={50}
-                    alt="User"
-                    className="rounded-full"
-                  />
+                  <Image src={user.photoURL} fill alt="User" className="rounded-full" />
                   <Menu.Items className="origin-top-right absolute right-0 mt-14 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <Menu.Item onClick={logOut}>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
-                          )}
-                        >
-                          Sign out
-                        </a>
-                      )}
-                    </Menu.Item>
+                    <Menu.Item onClick={logOut}>{({ active }) => <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Sign out</a>}</Menu.Item>
                   </Menu.Items>
                 </>
               )}
@@ -117,18 +94,7 @@ const Header = () => {
         <Disclosure.Panel className="sm:hidden">
           <div className="px-2 pb-3 space-y-1">
             {navigation.map((item) => (
-              <Disclosure.Button
-                key={item.id}
-                as="a"
-                href={item.href}
-                className={classNames(
-                  item.current
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                  "block px-3 py-2 rounded-md text-base font-medium"
-                )}
-                aria-current={item.current ? "page" : undefined}
-              >
+              <Disclosure.Button key={item.id} as="a" href={item.href} className={classNames(item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium')} aria-current={item.current ? 'page' : null}>
                 {item.name}
               </Disclosure.Button>
             ))}
@@ -136,7 +102,7 @@ const Header = () => {
         </Disclosure.Panel>
       </Disclosure>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
