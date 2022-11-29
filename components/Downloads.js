@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Chrome from '../../public/imgs/logo-chrome.svg'
-import FireFox from '../../public/imgs/logo-firefox.svg'
-import Opera from '../../public/imgs/logo-opera.svg'
+import Chrome from '../public/imgs/logo-chrome.svg'
+import FireFox from '../public/imgs/logo-firefox.svg'
+import Opera from '../public/imgs/logo-opera.svg'
 
 const Downloads = () => {
   return (

@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Illustriation from '../../public/imgs/illustration-features-tab-1.png'
-import Illustriation2 from '../../public/imgs/illustration-features-tab-2.png'
-import Illustriation3 from '../../public/imgs/illustration-features-tab-3.png'
+import Illustriation from '../public/imgs/illustration-features-tab-1.png'
+import Illustriation2 from '../public/imgs/illustration-features-tab-2.png'
+import Illustriation3 from '../public/imgs/illustration-features-tab-3.png'
 
 const Features = () => {
   return (

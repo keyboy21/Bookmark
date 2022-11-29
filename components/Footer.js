@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Back from '../../public/imgs/logo-bookmark-white.png'
+import Back from '../public/imgs/logo-bookmark-white.png'
 
 const Footer = () => {
   return (

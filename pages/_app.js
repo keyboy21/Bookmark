@@ -1,7 +1,18 @@
-import '../styles/globals.css';
+import '../styles/globals.css'
+import { Poppins } from '@next/font/google'
+import { SessionProvider } from 'next-auth/react'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const popins = Poppins({ 
+  subsets: ['latin'], 
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+ })
+
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
+  return (
+    <SessionProvider session={session}>
+      <main className={popins.className}>
+        <Component {...pageProps} />
+      </main>
+    </SessionProvider>
+  )
 }
-
-export default MyApp

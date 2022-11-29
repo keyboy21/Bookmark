@@ -1,40 +1,29 @@
 import Image from 'next/image'
-import Boormark from '../../public/imgs/logo-bookmark.svg'
+import Boormark from '../public/imgs/logo-bookmark.svg'
 import Link from 'next/link'
-import { navigation } from '../../nav-data'
+import { navigation } from '../nav-data'
 import { Disclosure, Menu } from '@headlessui/react'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth, provider } from '../../firebase/firebase'
-import { signInWithPopup, signOut } from 'firebase/auth'
+// import { useAuthState } from 'react-firebase-hooks/auth'
+// import { auth, provider } from '../firebase/firebase'
+// import { signInWithPopup, signOut } from 'firebase/auth'
+
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 const Header = () => {
+  const { data: session } = useSession()
+
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
-  const [user, loading, error] = useAuthState(auth)
 
   const Signin = async () => {
-    await signInWithPopup(auth, provider)
+    await signIn()
   }
 
   const logOut = async () => {
-    await signOut(auth)
+    await signOut()
   }
 
-  if (loading) {
-    return (
-      <div>
-        <p>Initialising User...</p>
-      </div>
-    )
-  }
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error}</p>
-      </div>
-    )
-  }
   return (
     <header>
       <Disclosure as="nav">
@@ -42,25 +31,23 @@ const Header = () => {
           <div className="py-1">
             <Image src={Boormark} alt="Bookmark" />
           </div>
-
           <ul className="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
             {navigation.map((item) => (
               <li className="cursor-pointer" key={item.id}>
                 <Link href={item.href}>{item.name}</Link>
               </li>
             ))}
-
-            {!user ? (
-              <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
-                Login
-              </button>
-            ) : (
+            {session ? (
               <>
-                <Image src={user.photoURL} width={50} height={50} alt="User" className="rounded-full" />
+                <Image src={session.user.image} width={50} height={50} alt="User" className="rounded-full" />
                 <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                   Logout
                 </button>
               </>
+            ) : (
+              <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
+                Login
+              </button>
             )}
           </ul>
 
@@ -75,18 +62,18 @@ const Header = () => {
 
           <Menu as="div" className="ml-3 sm:hidden relative">
             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-              {!user ? (
-                <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
-                  Login
-                </button>
-              ) : (
+              {/* {session ? (
                 <>
-                  <Image src={user.photoURL} fill alt="User" className="rounded-full" />
+                  <Image src={session.user.image} fill alt="User" className="rounded-full" />
                   <Menu.Items className="origin-top-right absolute right-0 mt-14 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <Menu.Item onClick={logOut}>{({ active }) => <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Sign out</a>}</Menu.Item>
                   </Menu.Items>
                 </>
-              )}
+              ) : (
+                <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
+                  Login
+                </button>
+              )} */}
             </Menu.Button>
           </Menu>
         </nav>

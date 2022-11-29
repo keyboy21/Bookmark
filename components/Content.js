@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Hero from '../../public/imgs/hero-bg.png'
+import Hero from '../public/imgs/hero-bg.png'
 const Content = () => {
   return (
     <section className="relative">
