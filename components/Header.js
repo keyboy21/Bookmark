@@ -2,15 +2,12 @@ import Image from 'next/image'
 import Boormark from '../public/imgs/logo-bookmark.svg'
 import Link from 'next/link'
 import { navigation } from '../nav-data'
+import Loading from './Loading'
 import { Disclosure, Menu } from '@headlessui/react'
-// import { useAuthState } from 'react-firebase-hooks/auth'
-// import { auth, provider } from '../firebase/firebase'
-// import { signInWithPopup, signOut } from 'firebase/auth'
-
 import { useSession, signIn, signOut } from 'next-auth/react'
 
 const Header = () => {
-  const { data: session } = useSession()
+  const { data: session, status } = useSession()
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -22,6 +19,12 @@ const Header = () => {
 
   const logOut = async () => {
     await signOut()
+  }
+
+  if (status === 'loading') {
+    ;<header>
+      <Loading />
+    </header>
   }
 
   return (
@@ -37,7 +40,7 @@ const Header = () => {
                 <Link href={item.href}>{item.name}</Link>
               </li>
             ))}
-            {session ? (
+            {status === 'authenticated' ? (
               <>
                 <Image src={session.user.image} width={50} height={50} alt="User" className="rounded-full" />
                 <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
@@ -61,20 +64,18 @@ const Header = () => {
           </div>
 
           <Menu as="div" className="ml-3 sm:hidden relative">
-            <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-              {/* {session ? (
-                <>
-                  <Image src={session.user.image} fill alt="User" className="rounded-full" />
-                  <Menu.Items className="origin-top-right absolute right-0 mt-14 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <Menu.Item onClick={logOut}>{({ active }) => <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Sign out</a>}</Menu.Item>
-                  </Menu.Items>
-                </>
-              ) : (
-                <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
-                  Login
-                </button>
-              )} */}
-            </Menu.Button>
+            {status === 'authenticated' ? (
+              <>
+                <Image src={session.user.image} fill alt="User" className="rounded-full" />
+                <Menu.Items className="origin-top-right absolute right-0 mt-14 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Item onClick={logOut}>{({ active }) => <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Logout</a>}</Menu.Item>
+                </Menu.Items>
+              </>
+            ) : (
+              <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
+                Login
+              </button>
+            )}
           </Menu>
         </nav>
 

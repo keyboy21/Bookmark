@@ -8,15 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.2",
+    "@headlessui/react": "^1.7.4",
     "@next/font": "^13.0.5",
-    "firebase": "^9.6.1",
     "next": "^13.0.2",
     "next-auth": "^4.17.0",
     "next-pwa": "^5.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-firebase-hooks": "^5.0.3",
     "tailwindcss-neumorphism": "^0.1.0"
   },
   "devDependencies": {

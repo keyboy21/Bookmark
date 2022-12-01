@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-const Loading = dynamic(() => import('./Loading'))
+const Loading = dynamic(() => import('../components/Loading'))
 const Header = dynamic(() => import('../components/Header'), { loading: () => <Loading /> })
 const Features = dynamic(() => import('../components/Features'), { loading: () => <Loading /> })
 const Content = dynamic(() => import('../components/Content'), { loading: () => <Loading /> })
