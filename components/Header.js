@@ -66,10 +66,14 @@ const Header = () => {
           <Menu as="div" className="ml-3 sm:hidden relative">
             {status === 'authenticated' ? (
               <>
-                <Image src={session.user.image} fill alt="User" className="rounded-full" />
+                <Image src={session.user.image} width={50} height={50} alt="User" className="rounded-full" />
+                <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
+                  Logout
+                </button>
+                {/* <Image src={session.user.image} fill alt="User" className="rounded-full" />
                 <Menu.Items className="origin-top-right absolute right-0 mt-14 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <Menu.Item onClick={logOut}>{({ active }) => <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Logout</a>}</Menu.Item>
-                </Menu.Items>
+                </Menu.Items> */}
               </>
             ) : (
               <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
