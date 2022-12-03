@@ -4,10 +4,10 @@ module.exports = {
     extend: {
       colors: {
         "bookmark-purple": "#5267DF",
-        "bookmark-red": "#FA5959",
+        "bookmark-red": "#E70909",
         "bookmark-blue": "#242A45",
-        "bookmark-grey": "#9194A2",
-        "bookmark-white": "#f7f7f7",
+        "bookmark-grey": "#707385",
+        "bookmark-white": "#FCFCFC",
         "morp":"#EBECF0"
       },
       animation: {
