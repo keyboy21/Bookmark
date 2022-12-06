@@ -42,7 +42,7 @@ const Header: FC = () => {
               </li>
             ))}
             {status === 'authenticated' ? (
-              <li>
+              <li className='contents'>
                 <Image src={session?.user?.image} width={50} height={50} alt="User" className="rounded-full" />
                 <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                   Logout
