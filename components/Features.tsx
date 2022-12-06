@@ -1,9 +1,10 @@
+import { FC } from 'react'
 import Image from 'next/image'
 import Illustriation from '../public/imgs/illustration-features-tab-1.png'
 import Illustriation2 from '../public/imgs/illustration-features-tab-2.png'
 import Illustriation3 from '../public/imgs/illustration-features-tab-3.png'
 
-const Features = () => {
+const Features: FC = () => {
   return (
     <section className="bg-bookmark-white py-20 mt-20 lg:mt-60" id="features">
       {/* Heading */}

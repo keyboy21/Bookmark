@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import Image from 'next/image'
 import Boormark from '../public/imgs/logo-bookmark.svg'
 import Link from 'next/link'
@@ -6,7 +7,7 @@ import Loading from './Loading'
 import { Disclosure, Menu } from '@headlessui/react'
 import { useSession, signIn, signOut } from 'next-auth/react'
 
-const Header = () => {
+const Header: FC = () => {
   const { data: session, status } = useSession()
 
   function classNames(...classes) {
@@ -42,16 +43,16 @@ const Header = () => {
             ))}
             {status === 'authenticated' ? (
               <li>
-                <Image src={session.user.image} width={50} height={50} alt="User" className="rounded-full" />
+                <Image src={session?.user?.image} width={50} height={50} alt="User" className="rounded-full" />
                 <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                   Logout
                 </button>
               </li>
             ) : (
               <li>
-              <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
-                Login
-              </button>
+                <button onClick={Signin} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
+                  Login
+                </button>
               </li>
             )}
           </ul>
@@ -68,7 +69,7 @@ const Header = () => {
           <Menu as="div" className="ml-3 sm:hidden relative">
             {status === 'authenticated' ? (
               <div className="flex space-x-2">
-                <Image src={session.user.image} width={50} height={50} alt="User" className="rounded-full" />
+                <Image src={session?.user?.image} width={50} height={50} alt="User" className="rounded-full" />
                 <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                   Logout
                 </button>

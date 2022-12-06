@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ **/
+
+// @ts-ignore
 const prod = process.env.NODE_ENV === 'production'
 
 const withPWA = require('next-pwa')({
@@ -19,9 +25,9 @@ const nextConfig = {
         source: '/_next/image(.*)',
         headers: [
           {
-            key: "Cache-Control",
+            key: 'Cache-Control',
             // Instead of this value:
-            value: "public, no-cache, no-store",
+            value: 'public, no-cache, no-store',
             // Cache-Control response header is `public, max-age=60` in production
             // and `public, max-age=0, must-revalidate` in development
           },
@@ -29,7 +35,6 @@ const nextConfig = {
       },
     ]
   },
-  swcMinify: true,
 }
 
 module.exports = withPWA(nextConfig)

@@ -1,6 +1,7 @@
+import { FC } from 'react'
 import Image from 'next/image'
 import Hero from '../public/imgs/hero-bg.png'
-const Content = () => {
+const Content: FC = () => {
   return (
     <section className="relative">
       <div className="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">

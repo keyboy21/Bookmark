@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://bookmark-dusky.vercel.app
+
+# Sitemaps
+Sitemap: https://bookmark-dusky.vercel.app/sitemap.xml

@@ -1,4 +1,5 @@
-const Contactus = () => {
+import { FC } from "react";
+const Contactus:FC = () => {
   return (
     <section className="bg-bookmark-purple text-bookmark-white py-20" id="contact">
       <div className="container">

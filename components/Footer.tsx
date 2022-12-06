@@ -1,7 +1,8 @@
+import { FC } from 'react'
 import Image from 'next/image'
 import Back from '../public/imgs/logo-bookmark-white.png'
 
-const Footer = () => {
+const Footer: FC  = () => {
   return (
     <footer className="bg-bookmark-blue py-8">
       <div className="container flex flex-col md:flex-row items-center">

@@ -1,4 +1,6 @@
-const Faq = () => {
+import { FC } from 'react'
+
+const Faq: FC = () => {
   return (
     <section className="bg-bookmark-white py-20">
       <div className="container">
