@@ -10,7 +10,7 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 const Header: FC = () => {
   const { data: session, status } = useSession()
 
-  function classNames(...classes) {
+  function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
   }
 
@@ -23,7 +23,7 @@ const Header: FC = () => {
   }
 
   if (status === 'loading') {
-    ;<header>
+    <header>
       <Loading />
     </header>
   }
