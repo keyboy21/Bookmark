@@ -43,4 +43,4 @@ const nextConfig = {
 }
 
 module.exports = withPWA(nextConfig)
-module.exports = withBundleAnalyzer(nextConfig)
+// module.exports = withBundleAnalyzer(nextConfig)
