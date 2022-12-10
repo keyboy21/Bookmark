@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import Image from 'next/image'
-import Boormark from '../public/imgs/logo-bookmark.svg'
 import Link from 'next/link'
-import { navigation } from '../nav-data'
 import Loading from './Loading'
-import { Disclosure, Menu } from '@headlessui/react'
 import { useSession, signIn, signOut } from 'next-auth/react'
+import { Disclosure, Menu } from '@headlessui/react'
+import { navigation } from '../nav-data'
+import Boormark from '../public/imgs/logo-bookmark.svg'
 
 const Header: FC = () => {
   const { data: session, status } = useSession()
@@ -42,7 +42,7 @@ const Header: FC = () => {
               </li>
             ))}
             {status === 'authenticated' ? (
-              <li className='contents'>
+              <li className="contents">
                 <Image src={session?.user?.image} width={50} height={50} alt="User" className="rounded-full" />
                 <button onClick={logOut} className="bg-bookmark-red text-white px-7 py-3 md:rounded uppercase">
                   Logout
