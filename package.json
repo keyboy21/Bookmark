@@ -10,7 +10,7 @@
     "analyze": "ANALYZE=true yarn build"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.4",
+    "@headlessui/react": "^1.7.5",
     "@next/bundle-analyzer": "^13.0.6",
     "@next/font": "^13.0.6",
     "next": "^13.0.6",
